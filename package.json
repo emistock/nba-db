@@ -1,5 +1,5 @@
 {
-  "name": "NBA Database",
+  "name": "NBADatabase",
   "version": "1.0.0",
   "description": "Database with express and node.js",
   "main": "app.js",
