@@ -1,0 +1,18 @@
+<!-- form to update database data -->
+<h1>Update {{coach.fname}} {{coach.lname}}</h1>
+<form id="update-coach" action="/coaches" method="post">
+<fieldset>
+  <legend>Enter Coach Info</legend>
+    First Name: <input type="text" name="fname" value="{{coach.fname}}"><br>
+    Last Name: <input type="text" name="lname" value="{{coach.lname}}"><br>
+    Team: <select name="team_id" id="team-selector">
+        {{#each teams}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Age: <input type="number" name="age" value="{{coach.age}}"><br>
+    Years Experience As NBA Head Coach: <input type="number" name="years" value="{{coach.years}}"><br>
+</fieldset>
+</form>
+<button onclick="updateCoach({{coach.id}})">Update</button>
+<script defer>selectTeam({{coach.team_id}});</script>

@@ -1,0 +1,9 @@
+<!-- form to update database data -->
+<h1>Update {{conference.name}}</h1>
+<form id="update-conference" action="/conference" method="post">
+<fieldset>
+  <legend>Enter Conference Info</legend>
+    Name: <input type="text" name="name" value="{{conference.name}}"><br>
+</fieldset>
+</form>
+<button onclick="updateConference({{conference.id}})">Update</button>

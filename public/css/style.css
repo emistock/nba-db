@@ -1,0 +1,163 @@
+/*
+Author: Emily Stockenbojer
+Date: 3/18/18
+*/
+
+table, th, td {
+   border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  background-image: url("images/dust_scratches.png");
+}
+
+table{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+body {
+  background-image: url("images/Sports.png");
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+fieldset {
+  background-image: url("images/dust_scratches.png");
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+  width: 500px;
+}
+
+fieldset legend{
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+h1{
+  text-align: center;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("images/zig zag wool.png");
+}
+
+.navigation li {
+  float: left;
+}
+
+.navigation li {
+  border-right: 1px solid #f4e7d4;
+}
+
+.navigation li:last-child {
+  border-right: none;
+}
+
+.navigation {
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.navigation a:hover {
+  background: linear-gradient(#c1c5cc, #eff0f2);
+  color: black;
+}
+
+.navigation a {
+  float: left;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#header{
+  text-align: right;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  text-shadow: 1px 1px 2px #000;
+  font-size: 60px;
+  background-image: url("images/dust_scratches.png");
+  letter-spacing: 2px;
+  font-family: 'Bungee Shade', cursive;
+}
+
+.navigation .search-container {
+  float: right;
+}
+
+.navigation input[type=text] {
+  padding: 6px;
+  margin: 6px;
+  font-size: 17px;
+  border: none;
+}
+
+.navigation .search-container button {
+  float: right;
+  padding: 6px 5px;
+  margin-top: 6px;
+  margin-right: 0px;
+  background: none;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+p {
+  text-align: left;
+}
+
+.navigation .search-container button:hover {
+  background: #ccc;
+}
+
+.attribution a{
+  color: white;
+  text-decoration: none;
+  font-size: 8px;
+
+}
+
+.foot{
+  text-align: center;
+  height: 50px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 100px;
+  padding-left: 120px;
+  color: white;
+  position:relative;
+  bottom:0;
+  left:0;
+
+  background-image: url("images/zig zag wool.png");
+  display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

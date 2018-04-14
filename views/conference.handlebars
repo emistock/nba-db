@@ -1,0 +1,28 @@
+<h1>2016-2017 NBA Conferences</h1>
+<!-- form to add new data to database -->
+<form id="addconference" action="/conference" method="post">
+<fieldset>
+  <legend>Enter Conference Info</legend>
+    Name: <input type="text" name="name">
+    <input type="submit" value="Submit">
+</fieldset>
+</form><br>
+
+<!-- table to display data from database -->
+<div id="conference-table">
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Delete Data</th>
+          <th>Edit Data</th>
+      </thead>
+      <tbody>
+          {{#each conferences}}
+          <tr>
+              <td>{{name}}</td>
+              <td><button onclick="deleteConference({{id}})">Delete</button></td>
+              <td><a href="/conference/{{id}}"><button>Update</button></a></td>
+          </tr>
+          {{/each}}
+      </tbody>
+  </table></div>

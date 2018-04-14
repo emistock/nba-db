@@ -1,0 +1,9 @@
+<!-- form to update database data -->
+<h1>Update {{playoff.name}}</h1>
+<form id="update-playoff" action="/playoffs" method="post">
+<fieldset>
+  <legend>Enter Playoff Info</legend>
+    Name: <input type="text" name="name" value="{{playoff.name}}"><br>
+</fieldset>
+</form>
+<button onclick="updatePlayoff({{playoff.id}})">Update</button>

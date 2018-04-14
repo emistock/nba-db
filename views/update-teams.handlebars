@@ -1,0 +1,26 @@
+<!-- form to update database data -->
+<h1>Update {{team.name}}</h1>
+<form id="update-team" action="/teams" method="post">
+<fieldset>
+  <legend>Enter Team Info</legend>
+    Name: <input type="text" name="name" value="{{team.name}}"><br>
+    Conference: <select name="conference_id" id="conf-selector">
+        {{#each conference}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Rank: <input type="number" name="standing" value="{{team.standing}}"><br>
+    Head Coach: <select name="coach_id" id="coach-selector">
+        {{#each coaches}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Wins: <input type="number" name="wins" value="{{team.wins}}"><br>
+    Losses: <input type="number" name="losses" value="{{team.losses}}"><br>
+    Points Per Game (PPG): <input type="number" step="any" name="ppg" value="{{team.ppg}}"><br>
+    Opponent PPG: <input type="number" step="any" name="oppg" value="{{team.oppg}}"><br>
+</fieldset>
+</form>
+<button onclick="updateTeam({{team.id}})">Update</button>
+<script defer>selectConference({{team.conference_id}});</script>
+<script defer>selectCoach({{team.coach_id}});</script>

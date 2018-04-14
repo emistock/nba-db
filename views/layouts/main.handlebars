@@ -1,0 +1,63 @@
+<!--
+Author: Emily Stockenbojer
+Date: 3/18/18
+-->
+
+<!-- all photographs that appear on this website are licensed with the Creative Commons CC0 license and can be used without attribution
+photo was retreived from https://www.pexels.com/-->
+<!-- background patterns were obtained from https://www.toptal.com/designers/subtlepatterns/ and are under a Creative Commons Attribution-ShareAlike 3.0 license
+attribution is included in bottom corner of homepage-->
+<!doctype html>
+<html>
+<head>
+	<title>NBA Database</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/js/{{this}}"></script>
+    {{/each}}
+		<!-- stylesheet from https://fonts.google.com -->
+		<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class = "wrapper">
+		<div class = "content">
+			<!-- website header -->
+			<div id= "header">
+				<b>NBA Database 🏀</b>
+			</div>
+			<!-- navgigation links -->
+			<div class="navigation">
+				<ul>
+					<li><a href="/home">Home</a></li>
+					<li><a href="/teams">Teams</a></li>
+					<li><a href="/coaches">Coaches</a></li>
+					<li><a href="/players">Players</a></li>
+					<li><a href="/conference">Conferences</a></li>
+					<li><a href="/playoffs">Playoff Series</a></li>
+					<li><a href="/teams_playoffs">Playoff Teams</a></li>
+					<li>
+					<!-- code for search bar adapted from https://www.w3schools.com/howto/howto_css_searchbar.asp -->
+					<div class="search-container">
+					    <form onsubmit="window.location = 'http://flip1.engr.oregonstate.edu:3423/search/' + search.value; return false;">
+					      <input type="text" placeholder="Search for players..." name="search">
+					      <button type="submit"><i class="fa fa-search"></i></button>
+					    </form>
+				  	</div></li></ul>
+			</div>
+			{{{body}}}
+			<br />
+			<!-- website footer -->
+			<div class="foot">
+				<!-- attribution for site resources -->
+		    <div class="attribution" style="float: right;">
+			    <br />
+			    <br />
+			    <a href="https://www.toptal.com/designers/subtlepatterns/">Patterns by Subtle Patterns</a>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

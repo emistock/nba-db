@@ -1,0 +1,50 @@
+<h1>2016-2017 NBA Playoffs</h1>
+
+{{#each foo}}
+{{this}}
+{{/each}}
+<div>
+  <!-- form to add new data to database -->
+    <form id="add_teams_playoffs" action="/teams_playoffs" method="post">
+
+    <fieldset>
+      <legend>Associate Playoff(s) with a Team</legend>
+    Teams: <select name='team_id'>
+        {{#each teams}}
+          <option value='{{id}}'>{{name}}</option>
+        {{/each}}
+    </select>
+    <br>
+    Playoff Series: <br /><sup>Multi-select</sup> <br /><select multiple name="playoffs">
+        {{!-- We display title but the value that is submitted through the form is actually the certificate's id --}}
+        {{#each playoffs}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+    </form>
+</div>
+<br/>
+<h3> Teams With Playoff Games </h3>
+
+<!-- table to display data from database -->
+<table>
+    <thead>
+        <th>Team</th>
+        <th>Playoff Series</th>
+        <th>Delete Data</th>
+        <th>Edit Data</th>
+    </thead>
+    <tbody>
+        {{#each teams_with_playoffs}}
+        <tr>
+            <td>{{team_name}}</td>
+            <td>{{playoff_name}}</td>
+            <td><button onclick="deleteTeamsPlayoffs({{team_id}},{{playoff_id}})">Delete</button></td>
+            <td><a href="/teams_playoffs/tid/{{team_id}}/pid/{{playoff_id}}"><button>Update</button></a></td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

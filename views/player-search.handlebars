@@ -1,0 +1,28 @@
+
+<h1>Search Results</h1>
+<!-- display search results from player search at the top of website -->
+<div id="player-search-table">
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Team</th>
+          <th>Age</th>
+          <th>Field Goal Percentage</th>
+          <th>Points Per Game</th>
+          <th>Delete Data</th>
+          <th>Edit Data</th>
+      </thead>
+      <tbody>
+          {{#each players}}
+          <tr>
+              <td>{{combinedname}}</td>
+              <td>{{team_id}}</td>
+              <td>{{age}}</td>
+              <td>{{fg}}</td>
+              <td>{{ppg}}</td>
+              <td><button onclick="deletePlayer({{id}})">Delete</button></td>
+              <td><a href="/players/{{id}}"><button>Update</button></a></td>
+          </tr>
+          {{/each}}
+      </tbody>
+  </table></div>

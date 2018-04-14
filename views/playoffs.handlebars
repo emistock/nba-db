@@ -1,0 +1,28 @@
+<h1>2016-2017 NBA Playoffs</h1>
+<!-- form to add new data to database -->
+<form id="addplayoff" action="/playoffs" method="post">
+<fieldset>
+  <legend>Enter Playoff Info</legend>
+    Name: <input type="text" name="name">
+    <input type="submit" value="Submit">
+</fieldset>
+</form><br>
+
+<!-- table to display data from database -->
+<div id="playoff-table">
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Delete Data</th>
+          <th>Edit Data</th>
+      </thead>
+      <tbody>
+          {{#each playoffs}}
+          <tr>
+              <td>{{name}}</td>
+              <td><button onclick="deletePlayoff({{id}})">Delete</button></td>
+              <td><a href="/playoffs/{{id}}"><button>Update</button></a></td>
+          </tr>
+          {{/each}}
+      </tbody>
+  </table></div>

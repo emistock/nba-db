@@ -1,0 +1,21 @@
+<!-- form to update database data -->
+<h1>Update Data</h1>
+<form id="update-teams-playoffs" action="/teams_playoffs" method="post">
+<fieldset>
+    <legend>Associate Playoff with {{Team}}</legend>
+Teams: Team: <select name="team_id" id="team-selector">
+    {{#each teams}}
+    <option value="{{id}}">{{name}}</option>
+    {{/each}}
+</select>
+<br>
+Playoff Series: <select name="playoff_id" id="play-selector">
+    {{#each playoffs}}
+    <option value="{{id}}">{{name}}</option>
+    {{/each}}
+</select><br>
+</fieldset>
+</form>
+<button onclick="updateTeamsPlayoffs({{team.id}},{{playoff.id}})">Update</button>
+<script defer>selectPlayoffs({{playoff.id}});</script>
+<script defer>selectTeam({{team.id}});</script>

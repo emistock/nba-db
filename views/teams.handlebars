@@ -1,0 +1,58 @@
+<h1>2016-2017 NBA Teams</h1>
+<!-- form to add new data to database -->
+<form id="addteam" action="/teams" method="post">
+<fieldset>
+  <legend>Enter Team Info</legend>
+    Name: <input type="text" name="name"><br>
+    Conference: <select name="conference_id">
+        {{#each conference}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Rank: <input type="number" name="standing"><br>
+    Head Coach: <select name="coach_id">
+        {{#each coaches}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Wins: <input type="number" name="wins"><br>
+    Losses: <input type="number" name="losses"><br>
+    Points Per Game (PPG): <input type="number" step="any" name="ppg"><br>
+    Opponent PPG: <input type="number" step="any" name="oppg"><br>
+    <input type="submit" value="Submit">
+</fieldset>
+</form><br>
+
+<!-- table to display data from database -->
+<div id="team-table">
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Conference</th>
+          <th>Rank</th>
+          <th>Head Coach</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Team PPG</th>
+          <th>Opponent PPG</th>
+          <th>Delete Data</th>
+          <th>Edit Data</th>
+      </thead>
+      <tbody>
+          {{#each teams}}
+          <tr>
+              <td>{{name}}</td>
+              <td>{{conference_id}}</td>
+              <td>{{standing}}</td>
+              <td>{{coach_id}}</td>
+              <td>{{wins}}</td>
+              <td>{{losses}}</td>
+              <td>{{ppg}}</td>
+              <td>{{oppg}}</td>
+              <td><button onclick="deleteTeam({{id}})">Delete</button></td>
+              <td><a href="/teams/{{id}}"><button>Update</button></a></td>
+          </tr>
+          {{/each}}
+      </tbody>
+  </table>
+</div>
