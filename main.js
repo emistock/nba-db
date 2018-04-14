@@ -23,7 +23,7 @@ app.use('/teams', require('./teams.js'));
 app.use('/coaches', require('./coaches.js'));
 app.use('/search', require('./search.js'));
 app.use('/players', require('./players.js'));
-app.use('/home', require('./home.js'));
+app.use('/', require('./home.js'));
 app.use('/conference', require('./conference.js'));
 app.use('/playoffs', require('./playoffs.js'));
 app.use('/teams_playoffs', require('./teams_playoffs.js'));
